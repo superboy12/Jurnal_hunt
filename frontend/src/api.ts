@@ -263,6 +263,24 @@ export interface AIModel {
   description: string
 }
 
+export const DEFAULT_AI_MODELS: AIModel[] = [
+  { id: "gemini-3.5-flash", name: "Gemini 3.5 Flash", provider: "Google Gemini", badge: "Gemini 3.5 · Default SOTA Fast", context_window: "1M tokens", description: "Default production-grade frontier Gemini 3.5 model for natural language queries and synthesis." },
+  { id: "gemini-3.5-flash-lite", name: "Gemini 3.5 Flash-Lite", provider: "Google Gemini", badge: "Gemini 3.5 · High Efficiency", context_window: "1M tokens", description: "Lightweight Gemini 3.5 model for rapid academic keyword extraction and filter parsing." },
+  { id: "gemini-3-flash-preview", name: "Gemini 3 Flash Preview", provider: "Google Gemini", badge: "Gemini 3.0 · Next-Gen Multimodal", context_window: "1M tokens", description: "Next-gen multimodal Gemini 3 model optimized for academic search interpretation and extraction." },
+  { id: "gemini-3.1-pro-preview", name: "Gemini 3.1 Pro Preview", provider: "Google Gemini", badge: "Gemini 3.1 · Frontier Reasoning", context_window: "2M tokens", description: "Gemini 3.1 frontier reasoning engine for complex scientific synthesis and comparative analysis." },
+  { id: "gemini-3.1-flash-lite", name: "Gemini 3.1 Flash-Lite", provider: "Google Gemini", badge: "Gemini 3.1 · High Throughput", context_window: "1M tokens", description: "Optimized Gemini 3.1 high-speed model for instant citation scoring and batch processing." },
+  { id: "gemini-3.6-flash", name: "Gemini 3.6 Flash", provider: "Google Gemini", badge: "Gemini 3.6 · SINTA & Citation", context_window: "1M tokens", description: "Enhanced Gemini 3.6 generation model optimized for Indonesian SINTA and bibliographic integrity." },
+  { id: "gemini-3.7-flash", name: "Gemini 3.7 Flash", provider: "Google Gemini", badge: "Gemini 3.7 · Logical Deduction", context_window: "1M tokens", description: "Gemini 3.7 reasoning model for research gap discovery and methodology validation." },
+  { id: "gemini-3.8-flash", name: "Gemini 3.8 Flash", provider: "Google Gemini", badge: "Gemini 3.8 · Literature Synthesizer", context_window: "1M tokens", description: "Advanced Gemini 3.8 generation authoring engine for publication-grade literature review synthesis." },
+  { id: "gemini-4-argon", name: "Gemini 4 Argon", provider: "Google Gemini", badge: "Gemini 4.0 · Ultimate Frontier", context_window: "2M tokens", description: "Google DeepMind's flagship Gemini 4.0 next-generation frontier architecture for comprehensive scientific research." },
+  { id: "gemini-2.5-pro", name: "Gemini 2.5 Pro", provider: "Google Gemini", badge: "Gemini 2.5 · Deep Reasoning", context_window: "2M tokens", description: "Advanced Gemini 2.5 reasoning architecture for rigorous scientific deduction." },
+  { id: "gemini-2.5-flash", name: "Gemini 2.5 Flash", provider: "Google Gemini", badge: "Gemini 2.5 · High Throughput", context_window: "1M tokens", description: "Gemini 2.5 generation high-speed model for academic abstract extraction." },
+  { id: "gemini-2.5-flash-lite", name: "Gemini 2.5 Flash-Lite", provider: "Google Gemini", badge: "Gemini 2.5 · Efficient", context_window: "1M tokens", description: "Low-latency Gemini 2.5 processing for real-time natural language query parsing." },
+  { id: "gemini-flash-latest", name: "Gemini 1.5 Flash (Latest)", provider: "Google Gemini", badge: "Gemini 1.5 · Production Stable", context_window: "1M tokens", description: "Google Gemini 1.5 production endpoint for reliable metadata classification and search parsing." },
+  { id: "gemini-pro-latest", name: "Gemini 1.5 Pro (Latest)", provider: "Google Gemini", badge: "Gemini 1.5 · Deep Analysis", context_window: "2M tokens", description: "Long-context Gemini 1.5 model for comprehensive multi-paper analysis." },
+  { id: "gemini-flash-lite-latest", name: "Gemini 1.5 Flash-Lite", provider: "Google Gemini", badge: "Gemini 1.5 · Low Latency", context_window: "1M tokens", description: "Gemini 1.5 ultra-fast lightweight model for instant keyword expansion." },
+]
+
 export interface ModelsResponse {
   default_model: string
   models: AIModel[]

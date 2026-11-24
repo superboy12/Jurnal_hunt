@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import {
   interpretCommand, startSearch, getSearch, getSearchResults,
   cancelSearch, getExportUrl, getModels, generateLiteratureReview,
-  searchByTitle,
+  searchByTitle, DEFAULT_AI_MODELS,
   type InterpretedCommand, type SearchSummary, type SearchArticle,
   type PaginatedArticles, type AIModel, type TitleSearchResult
 } from '../api'
@@ -66,8 +66,8 @@ export default function SearchPage() {
   const pollingRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // 15 AI Models State
-  const [models, setModels] = useState<AIModel[]>([])
-  const [selectedModel, setSelectedModel] = useState('gemini-3-flash-preview')
+  const [models, setModels] = useState<AIModel[]>(DEFAULT_AI_MODELS)
+  const [selectedModel, setSelectedModel] = useState('gemini-3.5-flash')
   const [activeKeysCount, setActiveKeysCount] = useState(3)
 
   // Literature Review Synthesis State
@@ -342,10 +342,12 @@ export default function SearchPage() {
                 border: '1px solid var(--border)',
                 fontWeight: 600,
                 cursor: 'pointer',
+                minWidth: 260,
+                maxWidth: 360,
               }}
             >
               {models.map(m => (
-                <option key={m.id} value={m.id}>
+                <option key={m.id} value={m.id} style={{ background: '#1a1d2e', color: '#ffffff' }}>
                   {m.name} ({m.badge})
                 </option>
               ))}
